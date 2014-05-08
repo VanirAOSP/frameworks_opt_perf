@@ -2,8 +2,10 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := \
-            $(call all-subdir-java-files)
+LOCAL_SRC_FILES := $(call all-java-files-under, src/java)
+
+LOCAL_JNI_SHARED_LIBRARIES := libperf_jni 
+LOCAL_REQUIRED_MODULES := libperf_jni
 
 LOCAL_MODULE_TAGS := optional
 
@@ -12,7 +14,7 @@ LOCAL_MODULE:= org.codeaurora.Performance
 # This will install the file in /system/framework
 LOCAL_MODULE_PATH := $(TARGET_OUT_JAVA_LIBRARIES)
 
-include $(BUILD_JAVA_LIBRARY)
+include $(BUILD_STATIC_JAVA_LIBRARY)
 
 # ====  permissions ========================
 include $(CLEAR_VARS)

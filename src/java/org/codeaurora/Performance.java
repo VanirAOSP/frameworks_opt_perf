@@ -28,15 +28,10 @@
 
 package org.codeaurora;
 
-import android.util.Log;
-
 public class Performance
 {
-    private static final String TAG = "Perf";
-
     /** &hide */
     public Performance() {
-        //Log.d(TAG, "Perf module initialized");
     }
 
     /* The following defined constants are to be used for PerfLock APIs*/
